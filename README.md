@@ -2,7 +2,6 @@
 Multi-agent scenario for uav agent and ris agent in communication when eavesdropper exist
 
 # Prepairing paper to submit. Progress will be shared.
-----
 
 ## Prerequisites
 Before running the script, ensure the following dependencies installed:
