@@ -141,8 +141,8 @@ def main():
         help="image name to save"
     )
     parser.add_argument(
-        "--max-runs", type=int, default=5,
-        help="max number of runs per algorithm to aggregate (default: 5)"
+        "--max-runs", type=int, default=10,
+        help="max number of runs per algorithm to aggregate (default: 10)"
     )
     parser.add_argument(
         "--run-glob", type=str, default=None,

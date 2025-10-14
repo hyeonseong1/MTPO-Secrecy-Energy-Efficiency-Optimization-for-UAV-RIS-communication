@@ -1,8 +1,6 @@
 # Optimizing Secrecy Energy Efficiency Based on Deep Reinforcement Learning
 Multi-agent scenario for uav agent and ris agent in communication when eavesdropper exist
 
-### Current Process: Prepairing a paper to submit.
-
 ----
 
 ## Prerequisites
@@ -12,33 +10,37 @@ Before running the script, ensure the following dependencies installed:
 
 You can install the dependencies to run:
 
-```commandline
+```bash
 conda create -n uavris python=3.10
 conda activate uavris
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
-(Optional) You can install different version of torch with compatible cuda version. 
-```commandline
+You can install different version of torch with compatible cuda version. 
+```bash
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 ```
 Then train multi-agent with 4 types of algorithms:
-```commandline
+```bash
 ##### LSPPO #####
-python3 main_train.py --algo SIMBA
+python main_train.py --algo SIMBA
 ##### PPO #####
-python3 main_train.py --algo PPO
+python main_train.py --algo PPO
 ##### TTD3 #####
-python3 main_train.py --algo TD3
+python main_train.py --algo TD3
 ##### TDDRL #####
-python3 main_train.py --algo DDPG
+python main_train.py --algo DDPG
 ```
-Use metrics to see performances or parameters of your trained model 
-```commandline
-python3 metrics/load_and_plot.py --path data/storage/[algorithm]/[your data path]
-python3 metrics/plot_average.py   --paths data/storage/DDPG data/storage/TD3 data/storage/PPO data/storage/SIMBA  --labels "TDDRL" "T5D" "DPPO" "LSPPO(Ours)"   --ep-num 300 --out plots/comparison_result.png
+Also you can run all experiments easily by shell script. 
+```bash
+sh run.sh
+```
 
-python3 calculate_simplicity.py
-python3 metrics/total_params.py 
+Use metrics to see performances or parameters of your trained model 
+```bash
+python metrics/load_and_plot.py --path data/storage/[algorithm]/[your data path]
+python metrics/plot_average.py   --paths data/storage/DDPG data/storage/TD3 data/storage/PPO data/storage/SIMBA  --labels "TDDRL" "TTD3" "DPPO" "GDP (Proposed)" --out plots/comparison_result.png
+python calculate_simplicity.py
+python metrics/total_params.py 
 ```
 ---
 ## Reference

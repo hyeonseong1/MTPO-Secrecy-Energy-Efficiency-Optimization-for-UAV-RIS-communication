@@ -14,12 +14,14 @@ parser.add_argument('--trained-uav', default=False, action='store_true',
                     help='use trained uav instead of retraining')
 parser.add_argument('--algo', type=str, required=True, default='SIMBA',
                     help="select algorithms to train agents (SIMBA / PPO / TD3 / DDPG)")
+parser.add_argument('--seed', type=int, default=0, help="random seed")
 
 args = parser.parse_args()
 
 assert args.reward in ['ssr', 'see'], "reward must be ['ssr', 'see']"
 
 import numpy as np
+import random
 import math
 import time
 from environment.env import MiniSystem
@@ -34,6 +36,9 @@ lr2 = 3e-3  # 1e-3
 lr_step_size = 300
 k_epoch = 10
 eps_clip = 0.2
+
+random.seed(args.seed)
+np.random.seed(args.seed)
 
 from algorithms.simba import SIMBAagent
 from algorithms.ppo import PPOAgent
