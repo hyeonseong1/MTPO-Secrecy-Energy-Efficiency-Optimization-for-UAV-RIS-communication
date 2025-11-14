@@ -21,7 +21,7 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 ```
 Then train multi-agent with 4 types of algorithms:
 ```bash
-##### LSPPO #####
+##### MTPO #####
 python main_train.py --algo SIMBA
 ##### PPO #####
 python main_train.py --algo PPO
