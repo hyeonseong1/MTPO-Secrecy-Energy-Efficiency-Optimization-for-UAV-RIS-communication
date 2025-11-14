@@ -11,8 +11,8 @@ Before running the script, ensure the following dependencies installed:
 You can install the dependencies to run:
 
 ```bash
-conda create -n uavris python=3.10
-conda activate uavris
+conda create -n MTPO python=3.10
+conda activate MTPO
 pip install -r requirements.txt
 ```
 You can install different version of torch with compatible cuda version. 
